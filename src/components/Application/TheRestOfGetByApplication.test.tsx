@@ -10,12 +10,17 @@ describe("Application the rest of get by query", () => {
 
     const paragraphElement = screen.getByText("All fields are mandatory");
     expect(paragraphElement).toBeInTheDocument();
+
     const nameElement = screen.getByDisplayValue("Hazem");
     expect(nameElement).toBeInTheDocument();
 
     const imageElement = screen.getByAltText("a person with a laptop");
     expect(imageElement).toBeInTheDocument();
 
-    
+    const closeIcon = screen.getByTitle("close");
+    expect(closeIcon).toBeInTheDocument();
+
+    const customElement = screen.getByTestId("custom-element");
+    expect(customElement).toBeInTheDocument();
   });
 });
