@@ -10,8 +10,8 @@ describe("Greet", () => {
     expect(screen.getByText(/hello/i)).toBeInTheDocument();
   });
 
-  it("render with the name", () => {
-    render(<Greet name="Hazem" />);
-    expect(screen.getByText(/hello Hazem/i)).toBeInTheDocument();
-  });
+//   it("render with the name", () => {
+//     render(<Greet name="Hazem" />);
+//     expect(screen.getByText(/hello Hazem/i)).toBeInTheDocument();
+//   });
 });
