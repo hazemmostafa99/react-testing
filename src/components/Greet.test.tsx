@@ -1,9 +1,15 @@
 import { render, screen } from "@testing-library/react";
-import { expect, test } from "vitest";
+import { describe, expect, test } from "vitest";
 import Greet from "./Greet";
 
-test("render greet", () => {
-  render(<Greet />);
-  const greetText = screen.getByText(/hello/i);
-  expect(greetText).toBeInTheDocument();
+describe("Greet", () => {
+  test("render correctly", () => {
+    render(<Greet />);
+    expect(screen.getByText(/hello/i)).toBeInTheDocument();
+  });
+
+  test("render with the name", () => {
+    render(<Greet name="Hazem" />);
+    expect(screen.getByText(/hello Hazem/i)).toBeInTheDocument();
+  });
 });

@@ -1,5 +1,5 @@
-function Greet() {
-  return <div>Hello</div>;
+function Greet({ name }: { name?: string }) {
+  return <div>Hello {name}</div>;
 }
 
 export default Greet;
