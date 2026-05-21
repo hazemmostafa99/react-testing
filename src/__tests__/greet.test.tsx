@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import Greet from "./Greet";
+import Greet from "../components/Greet";
 
 describe("Greet", () => {
   // fit to focus on this test === only
