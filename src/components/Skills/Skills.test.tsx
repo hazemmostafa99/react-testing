@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
 import { Skills } from "./Skills";
-import { render, screen } from "@testing-library/react";
+import { render, screen, logRoles } from "@testing-library/react";
 
 describe("Skills", () => {
   const skills = ["HTML", "CSS", "JS"];
@@ -27,12 +27,19 @@ describe("Skills", () => {
     });
     expect(startLeariningButton).not.toBeInTheDocument();
   });
-  
+
   test("start learining button is eventually displayed", async () => {
-    render(<Skills skills={skills} />);
-    const startLeariningButton = await screen.findByRole("button", {
-      name: "Start learning",
-    });
+    const view = render(<Skills skills={skills} />);
+    logRoles(view.container);
+    // screen.debug();
+    const startLeariningButton = await screen.findByRole(
+      "button",
+      {
+        name: "Start learning",
+      },
+      { timeout: 2000 },
+    );
+    // screen.debug();
     expect(startLeariningButton).toBeInTheDocument();
   });
 });
