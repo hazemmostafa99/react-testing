@@ -1,11 +1,12 @@
-import { Counter } from "./components/Counter/Counter";
 import "./App.css";
+import { AppProviders } from "./providers/AppProviders";
+import { MuiMode } from "./components/MUI/MuiMode";
 
 function App() {
   return (
-    <>
-      <Counter />
-    </>
+    <AppProviders>
+      <MuiMode />
+    </AppProviders>
   );
 }
 
